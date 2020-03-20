@@ -1,0 +1,48 @@
+﻿@model ReversiBackEnd.Models.Player
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+<!--
+    <div class="row">
+    <div class="col-md-4">
+        <form action="\Register" method="post">
+            <label> Email </label> <br />
+            <input type="text" name="Email" value="" /> <br />
+            <label> Gebruikersnaam </label>
+            <input type="text" name="UserName" value="" /> <br />
+            <label> Wachtwoord</label> <br />
+            <input type="password" name="Password" value="" /> <br />
+            <input type="submit" value="registreren" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+    -->
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Registreren" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

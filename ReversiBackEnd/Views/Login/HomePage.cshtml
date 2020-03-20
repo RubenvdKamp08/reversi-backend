@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ReversiBackEnd.Models.JoinableGame>
+@{
+    ViewData["Title"] = "HomePage";
+}
+
+<h1>HomePage</h1>
+<h2>UserId : @ViewData["UserId"]</h2>
+<h2>Token : @ViewData["Token"]</h2>
+
+<br /> <br />
+<a asp-action="CreateGame">Aanmaken spel</a>
+
+<form>
+    
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Omschrijving)
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Omschrijving)
+        </td>
+        <td>
+            <a asp-action="joinJoinable" asp-route-token="@item.Token"> Join </a>
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+
+
+
